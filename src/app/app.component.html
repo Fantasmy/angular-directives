@@ -1,0 +1,58 @@
+<div class="customise">
+  <label>language</label>
+  <select [(ngModel)]="language">
+    <option value="english">English</option>
+    <option value="čeština">Čeština</option>
+    <option value="portugues">Português</option>
+    <option value="castellano">Castellano</option>
+    <option value="suomi">Suomi</option>
+    <option value="deutsch">Deutsch</option>
+    <option value="kiswahili">Kiswahili</option>
+    <option value="hindi">Hindi</option>
+    <option value="românã">Românã</option>
+    <option value="中文">中文</option>
+  </select>
+  <div class="field">
+    <label>Red</label>
+    <input type="range" min="0" max="255" [(ngModel)]="red" />
+  </div>
+  <div class="field">
+    <label>Green</label>
+    <input type="range" min="0" max="255" [(ngModel)]="green" />
+  </div>
+  <div class="field">
+    <label>Blue</label>
+    <input type="range" min="0" max="255" [(ngModel)]="blue" />
+  </div>
+  <div class="field">
+    <label>Fat borders?</label>
+    <input type="checkbox" [(ngModel)]="borderFat" />
+  </div>
+  <div class="field">
+    <label>Dashed borders?</label>
+    <input type="checkbox" [(ngModel)]="borderDashed" />
+  </div>
+</div>
+
+<p>DEBUG:</p>
+<p>border fat? - {{borderFat}} -</p>
+<p>border dashed? - {{borderDashed}} -</p>
+<p>select language - {{language}} -</p>
+<p>color red - {{red}} -</p>
+<p>color green - {{green}} -</p>
+<p>color blue - {{blue}} -</p>
+
+<div class="box border-slim border-solid" [ngClass]="{'border-fat': borderFat , 'border-dashed': borderDashed}" [ngStyle]="{'background-color': 'rgb(' + red + ', ' + green + ', ' + blue + ')'}"
+  [ngSwitch]="language">
+  <p *ngSwitchCase="'english'"> Hello everyone!</p>
+  <p *ngSwitchCase="'čeština'">Ahoj všichni!</p>
+  <p *ngSwitchCase="'portugues'">Olá a todos!</p>
+  <p *ngSwitchCase="'castellano'">Hola a todos!</p>
+  <p *ngSwitchCase="'suomi'">Saippuakauppias!</p>
+  <p *ngSwitchCase="'deutsch'">Hallo zusammen!</p>
+  <p *ngSwitchCase="'kiswahili'">Mambo vipi watu</p>
+  <p *ngSwitchCase="'hindi'">Hin"Namaste!</p>
+  <p *ngSwitchCase="'românã'">Ro"Salutare tuturor!</p>
+  <p *ngSwitchCase="'中文'">大家好!</p>
+  <p *ngSwitchDefault>Please select your language</p>
+</div>

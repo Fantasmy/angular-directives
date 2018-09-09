@@ -1,0 +1,41 @@
+/* You can add global styles to this file. and also import other style files */
+
+.customise {
+  padding-top: 30px;
+  margin-bottom: 30px;
+  
+} 
+
+.box {
+  width:  100 vw;
+  height: 100vh;
+  padding: 30px;
+  min-height: 100px;
+  border-color: black; 
+  font-size: 40px;
+}
+
+
+
+.border-slim {
+  border-width: 2px; 
+}
+
+.border-fat {
+  border-width: 20px; 
+}
+
+
+.border-solid {
+  border-style: solid; 
+}
+
+
+.border-dashed {
+  border-style: dashed; 
+}
+
+.field {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
